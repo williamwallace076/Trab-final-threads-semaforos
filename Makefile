@@ -1,19 +1,22 @@
-# Definições
+# Nome do compilador
 CXX = g++
-CXXFLAGS = -std=c++20 -pthread
 
+# Nome do arquivo executável
+TARGET = caixa_supermercado
 
-TARGET = supermercado
+# Opções de compilação
+CXXFLAGS = -std=c++17 -pthread
 
-
+# Arquivo fonte
 SRCS = main.cpp
 
-
-all: $(TARGET)
-
+# Regra para compilar o programa
 $(TARGET): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
 
-
+# Regra para limpar arquivos gerados
 clean:
 	rm -f $(TARGET)
+
+# Regra padrão
+.PHONY: clean
