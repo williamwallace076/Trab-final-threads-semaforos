@@ -2,9 +2,11 @@
 CXX = g++
 CXXFLAGS = -std=c++20 -pthread
 
+
 TARGET = supermercado
 
-SRCS = supermercado.cpp
+
+SRCS = main.cpp
 
 
 all: $(TARGET)
