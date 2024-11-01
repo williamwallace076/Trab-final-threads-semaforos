@@ -1,10 +1,17 @@
+# Definições
 CXX = g++
-CXXFLAGS = -pthread
+CXXFLAGS = -std=c++20 -pthread
 
-all: supermercado
+TARGET = supermercado
 
-supermercado: supermercado.cpp
-	$(CXX) -o supermercado supermercado.cpp $(CXXFLAGS)
+SRCS = supermercado.cpp
+
+
+all: $(TARGET)
+
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
+
 
 clean:
-	rm -f supermercado
+	rm -f $(TARGET)
